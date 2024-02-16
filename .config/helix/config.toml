@@ -1,0 +1,18 @@
+theme = "kanabox"
+
+[editor.statusline]
+left = ["mode", "spinner", "total-line-numbers", "version-control"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
+select = "underline"
+
+[editor.gutters.line-numbers]
+min-width = 3
