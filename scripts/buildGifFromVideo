@@ -1,0 +1,15 @@
+INPUT=$1
+FILENAME="${INPUT%.*}"
+FRAMESDIR=_tmpFrames
+
+echo "# creating temporary directory"
+mkdir $FRAMESDIR
+
+echo "# Split Video to Frames"
+ffmpeg -loglevel panic -hide_banner -i $INPUT -vf scale=1280:-1:flags=lanczos,fps=10 ${FRAMESDIR}/ffout%03d.png 2>&1 > /dev/null
+
+echo "# Combine Frames to GIF"
+convert -loop 0 ${FRAMESDIR}/ffout*.png ${FILENAME}.gif
+
+echo "# cleanup"
+rm -rf $FRAMESDIR

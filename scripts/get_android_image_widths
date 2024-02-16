@@ -1,0 +1,16 @@
+
+files=`ls app/src/main/res/drawable-mdpi`
+
+for IMAGE in $(ls app/src/main/res/drawable-mdpi)
+do
+
+
+	MDPI=`magick identify -format "%[fx:w]" app/src/main/res/drawable-mdpi/$IMAGE`
+	HDPI=`magick identify -format "%[fx:w]" app/src/main/res/drawable-hdpi/$IMAGE`
+	XHDPI=`magick identify -format "%[fx:w]" app/src/main/res/drawable-xhdpi/$IMAGE`
+	XXHDPI=`magick identify -format "%[fx:w]" app/src/main/res/drawable-xxhdpi/$IMAGE`
+	XXXHDPI=`magick identify -format "%[fx:w]" app/src/main/res/drawable-xxxhdpi/$IMAGE`
+
+
+	echo "$IMAGE;$MDPI;$HDPI;$XHDPI;$XXHDPI;$XXXHDPI"
+done

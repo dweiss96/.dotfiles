@@ -1,0 +1,9 @@
+commit=$1
+
+workingIndexCommit=0000000000000000000000000000000000000000
+
+if [[ $commit == $workingIndexCommit ]]; then
+	git diff
+else
+	git diff "$commit"^ $commit
+fi

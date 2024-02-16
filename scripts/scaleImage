@@ -1,0 +1,19 @@
+FILENAME=$1
+MDPI=$2
+HDPI=$3
+XHDPI=$4
+XXHDPI=$5
+XXXHDPI=$6
+
+# create folders for safety reasons
+mkdir -p drawable-mdpi
+mkdir -p drawable-hdpi
+mkdir -p drawable-xhdpi
+mkdir -p drawable-xxhdpi
+mkdir -p drawable-xxxhdpi
+
+convert $FILENAME -resize ${MDPI}x drawable-mdpi/$FILENAME
+convert $FILENAME -resize ${HDPI}x drawable-hdpi/$FILENAME
+convert $FILENAME -resize ${XHDPI}x drawable-xhdpi/$FILENAME
+convert $FILENAME -resize ${XXHDPI}x drawable-xxhdpi/$FILENAME
+convert $FILENAME -resize ${XXXHDPI}x drawable-xxxhdpi/$FILENAME

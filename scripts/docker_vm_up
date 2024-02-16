@@ -1,0 +1,12 @@
+eval $(cat ~/.docker_vm_config_envs)
+
+DOCKER_IP=`echo $DOCKER_HOST | sed "s/tcp:\/\///" | sed "s/:.*//"`
+DOCKER_PORT=`echo $DOCKER_HOST | sed "s/tcp:\/\///" | sed "s/.*://"`
+
+if nc -z $DOCKER_IP $DOCKER_PORT 2>/dev/null; then
+    ``
+else
+    docker-machine env default > ~/.docker_vm_config_envs
+fi
+cat ~/.docker_vm_config_envs
+

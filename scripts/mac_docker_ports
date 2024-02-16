@@ -1,0 +1,8 @@
+VM="default"
+for i in {30000..39999}
+do
+	echo "Writing Port $i"
+	#PORT=30000
+	PORT=$i
+	VBoxManage modifyvm "$VM" --natpf1 "docker_$PORT,tcp,127.0.0.1,$PORT,,$PORT"
+done
