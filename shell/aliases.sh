@@ -128,10 +128,3 @@ alias wetter="curl https://wttr.in"
 alias rread="$DOTFILEDIR/scripts/rread"
 alias rreadme="$DOTFILEDIR/scripts/rread README.md"
 alias curltime="curl -o /dev/null -s -w 'Total: %{time_total}s\n'"
-
-#######################
-# override w/ custom  #
-#######################
-for file in $DOTFILEDIR/custom/.aliases_*; do
-	source "$file"
-done
