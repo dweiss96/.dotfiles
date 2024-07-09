@@ -7,7 +7,7 @@
 #set refs-view-date-format = "%Y-%m-%d %H:%M"
 #set refs-view-author = email-user
 set main-view = line-number:no date:custom,format:"%Y-%m-%d %H:%M" author:email-user id:yes commit-title:yes,graph=v2,refs,overflow=no
-
+set reference-format = hide:other
 
 # Colors
 color cursor 82 0 underline
