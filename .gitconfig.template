@@ -1,6 +1,6 @@
 [user]
-	name = Daniel Weiß
-	email = dweiss@exa-online.com
+	name = {{FULLNAME}}
+	email = {{MAIL}}
 [core]
     editor = vim
 	excludesFile = ~/.config/git/ignore

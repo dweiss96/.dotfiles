@@ -34,3 +34,6 @@ _darcs
 \shell
 \wallpaper
 \installer
+
+.gitconfig.template
+.zshrc.template

@@ -1,7 +1,6 @@
 HISTCONTROL=ignoreboth
-HISTCONTROL=ignoreboth
 
-export DOTFILEDIR="$HOME/.dotfiles"
+export DOTFILEDIR={{GIT_DIR}}
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -23,12 +22,14 @@ source "$DOTFILEDIR/shell/paths.sh"
 source "$DOTFILEDIR/shell/yabai.sh"
 
 # Work specific ALIAS (not in git for safety reasons)
-for file in $(find $DOTFILEDIR/work -type f)
-do
-  if [ -f "$file" ]; then
-    source $file
-  fi
-done
+if [ -f $DOTFILEDIR/work ]; then
+  for file in $(find $DOTFILEDIR/work -type f)
+  do
+    if [ -f "$file" ]; then
+      source $file
+    fi
+  done
+fi
 
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
