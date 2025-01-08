@@ -1,85 +1,13 @@
-{ pkgs, ... }:
+let
+  pkgs = import <nixpkgs> { };
+  tools = import ./categories/tools.nix pkgs;
+  devApps = import ./categories/development.nix pkgs;
 
-with pkgs; [
-  act
-  ansible
-  arping
-  autoconf
-  automake
-  azure-cli
-  bash
-  bat
-  bazel
-  btop
-  cargo
-  coreutils-full
-  curl
-  dart-sass
-  dep-tree
-  diff-so-fancy
-  difftastic
-  dog
-  duf
-  dust
-  erdtree
-  eza
-  fd
-  ffmpeg
-  flamegraph
-  flutter327
-  fzf
-  gcc
-  git
-  git-extras
-  git-lfs
-  git-secrets
-  gitlab-ci-local
-  gitleaks
-  glow
-  gnupg
-  gnused
-  go
-  gping
-  haskellPackages.patat
-  helix
-  highlight
-  imagemagick
-  inetutils
-  jdk11
-  jdk17
-  jdk21
-  jq
-  libksba
-  maven
-  meson
-  neovim
-  ninja
-  nmap
-  nodejs_22
-  ouch
-  podman
-  procps
-  procs
-  pv
-  pwgen
-  pyenv
-  python314
-  qemu
-  ranger
-  ripgrep
-  rsync
-  rustc
-  sbt
-  tig
-  tlrc
-  trippy
-  vim
-  wget
-  yarn
-  yq
-  yubikey-manager
-  zig
-  zoxide
-  zsh
-  stow
-]
+  platformApps = if pkgs.system == "aarch64-darwin" || pkgs.system == "x86_64-darwin" then 
+    import ./categories/macos.nix pkgs
+  else
+    import ./categories/linux.nix pkgs
+  ;
+in
+
+tools ++ devApps ++ platformApps

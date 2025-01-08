@@ -1,0 +1,45 @@
+{ pkgs, ... }:
+
+with pkgs; [
+  arping
+  bash
+  bat
+  btop
+  coreutils-full
+  curl
+  dog
+  duf
+  dust
+  erdtree
+  eza
+  fd
+  ffmpeg
+  flamegraph
+  fzf
+  glow
+  gnupg
+  gnused
+  gping
+  haskellPackages.patat
+  highlight
+  imagemagick
+  inetutils
+  libksba
+  ninja
+  nmap
+  ouch
+  procps
+  procs
+  pv
+  pwgen
+  ranger
+  ripgrep
+  rsync
+  stow
+  tlrc
+  trippy
+  wget
+  yubikey-manager
+  zoxide
+  zsh
+]

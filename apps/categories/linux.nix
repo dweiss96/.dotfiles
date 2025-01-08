@@ -5,4 +5,5 @@ with pkgs; [
   xmonad
   xmonad-contrib
   helm
+  wezterm
 ]
