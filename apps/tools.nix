@@ -4,7 +4,6 @@ with pkgs; [
   arping
   bash
   bat
-  btop
   coreutils-full
   curl
   dog
@@ -41,5 +40,4 @@ with pkgs; [
   wget
   yubikey-manager
   zoxide
-  zsh
 ]

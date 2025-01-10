@@ -1,5 +1,1 @@
-work
-secrets
-custom
-.gitconfig
-.zshrc
+/lib/work

@@ -1,0 +1,6 @@
+{
+  username = "{{USERNAME}}";
+  homeDirectory = "{{USERDIR}}";
+  gitFullName = "{{GITFULLNAME}}";
+  gitMail = "{{GITMAIL}}";
+}

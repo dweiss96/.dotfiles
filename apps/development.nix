@@ -4,14 +4,12 @@ with pkgs;
 let
   # imports of custom packages
   rustlang = import ./custom_packages/rustlang.nix;
-  vscode = import ./custom_packages/vscode-with-extensions.nix;
+  # vscode = import ./custom_packages/vscode-with-extensions.nix;
 
   git_stuff = [
     diff-so-fancy
     difftastic
-    git
     git-extras
-    git-lfs
     git-secrets
     gitlab-ci-local
     gitleaks
@@ -22,10 +20,10 @@ let
     # NodeJS
     nodejs_22
     yarn
-    
+
     # Java
-    jdk11
-    jdk17
+    # jdk11
+    # jdk17
     jdk21
     maven
     sbt
@@ -40,18 +38,13 @@ let
     pyenv
 
     # other
+    php
     dart-sass
     flutter327
     gcc
     go
     meson
     zig
-  ];
-
-  ide = vscode ++ [
-    helix
-    vim
-    neovim
   ];
 
   tools = [
@@ -69,4 +62,4 @@ let
   ];
 in
 
-git_stuff ++ toolchains ++ ide ++ tools
+git_stuff ++ toolchains ++ tools
