@@ -38,6 +38,11 @@ in
       ".config/skhd".source = config.lib.file.mkOutOfStoreSymlink ./config_files/without_module/skhd;
       ".config/yabai".source = config.lib.file.mkOutOfStoreSymlink ./config_files/without_module/yabai;
       ".config/zed/themes/catppuccin-pink.json".source = config.lib.file.mkOutOfStoreSymlink ./config_files/zed-theme.catppuccin-pink.json;
+
+      ".sdks/jdk/jdk11".source = pkgs.jdk11;
+      ".sdks/jdk/jdk17".source = pkgs.jdk17;
+      ".sdks/jdk/jdk21".source = pkgs.jdk21;
+      ".sdks/jdk/scala".source = pkgs.scala;
     };
     sessionVariables = {
       EDITOR = "vim";
