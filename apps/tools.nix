@@ -35,6 +35,7 @@ with pkgs; [
   ranger
   ripgrep
   rsync
+  spaceship-prompt
   stow
   tlrc
   trippy
@@ -42,5 +43,6 @@ with pkgs; [
   xz
   yubikey-manager
   zoxide
+  zsh-powerlevel10k
   zstd
 ]
