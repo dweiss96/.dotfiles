@@ -10,7 +10,9 @@ with pkgs; [
   pkgs.cocoapods
   pkgs.mas
 
-  nixcasks.rustdesk
+  nixcasks.jordanbaird-ice
+  nixcasks.shortcat
+  # nixcasks.sf-symbols
   # maybe missing nix-darwin because accessibility requests fail
   # yabai
   # skhd

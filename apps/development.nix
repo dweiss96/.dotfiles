@@ -38,27 +38,31 @@ let
     pyenv
 
     # other
-    php
     dart-sass
     flutter327
     gcc
     go
     meson
+    php
+    ruby
+    sqlite
     zig
   ];
 
   tools = [
     act
     ansible
-    bazel
     autoconf
     automake
     azure-cli
+    bazel
     dep-tree
-    yq
     jq
-    qemu
     podman
+    podman-tui
+    qemu
+    sqlitebrowser
+    yq
   ];
 in
 

@@ -37,9 +37,10 @@ in
       ".config/sketchybar".source = config.lib.file.mkOutOfStoreSymlink ./config_files/without_module/sketchybar;
       ".config/skhd".source = config.lib.file.mkOutOfStoreSymlink ./config_files/without_module/skhd;
       ".config/yabai".source = config.lib.file.mkOutOfStoreSymlink ./config_files/without_module/yabai;
+      ".config/zed/themes/catppuccin-pink.json".source = config.lib.file.mkOutOfStoreSymlink ./config_files/zed-theme.catppuccin-pink.json;
     };
     sessionVariables = {
-      # EDITOR = "emacs";
+      EDITOR = "vim";
     };
   };
 
@@ -55,6 +56,7 @@ in
   programs.git = import ./programs/git.nix userConfig.gitFullName userConfig.gitMail;
   programs.btop = import ./programs/btop.nix;
   programs.helix = import ./programs/helix.nix;
+  programs.zed-editor = import ./programs/zed-editor.nix;
   # programs.vscode = import ./programs/vscode.nix pkgs;
 
   imports = [

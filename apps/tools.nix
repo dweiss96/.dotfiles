@@ -2,6 +2,7 @@
 
 with pkgs; [
   arping
+  audacity
   bash
   bat
   coreutils-full
@@ -38,6 +39,8 @@ with pkgs; [
   tlrc
   trippy
   wget
+  xz
   yubikey-manager
   zoxide
+  zstd
 ]
