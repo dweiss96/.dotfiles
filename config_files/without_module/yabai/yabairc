@@ -55,3 +55,7 @@ yabai -m rule --add label="Select file to save to" app="^Inkscape$" title="Selec
 yabai -m config layout bsp
 
 echo "yabai configuration loaded.."
+
+echo "starting jankyborders.."
+borders &
+echo "jankyborders started.."
