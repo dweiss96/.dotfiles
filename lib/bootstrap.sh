@@ -20,9 +20,11 @@ sh <(curl -L https://nixos.org/nix/install) --daemon
 # install home-manager
 /bin/bash -c "$(nix-shell '<home-manager>' -A install)"
 
-# install homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install yabai skhd
+# install homebrew if on MacOS
+if [[ $(uname) -eq "Darwin" ]]; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    brew install yabai skhd
+fi
 
 # build home directory with home-manager
 /bin/bash -c "$(home-manager switch)"
