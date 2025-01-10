@@ -5,15 +5,17 @@ let
     osVersion = "sonoma";
   };
 in
-with pkgs; [
+[
   pkgs.jankyborders
   pkgs.cocoapods
   pkgs.mas
+  
+  pkgs.yabai
+  pkgs.skhd
 
   nixcasks.jordanbaird-ice
   nixcasks.shortcat
+  
+  # somehow presents a warning that SfSymbols6 is marked as broken
   # nixcasks.sf-symbols
-  # maybe missing nix-darwin because accessibility requests fail
-  # yabai
-  # skhd
 ]
