@@ -7,83 +7,83 @@ in
   nixpkgs.vscodium
 
   # theme
-  nixpkgs.vscode-marketplace-release.catppuccin.catppuccin-vsc
-  nixpkgs.vscode-marketplace-release.catppuccin.catppuccin-vsc-icons
-  nixpkgs.vscode-marketplace-release.github.github-vscode-theme
+  nixpkgs.open-vsx-release.catppuccin.catppuccin-vsc
+  nixpkgs.open-vsx-release.catppuccin.catppuccin-vsc-icons
+  nixpkgs.open-vsx-release.github.github-vscode-theme
 
   # PHP
-  nixpkgs.vscode-marketplace-release.devsense.composer-php-vscode
-  nixpkgs.vscode-marketplace-release.devsense.intelli-php-vscode
-  nixpkgs.vscode-marketplace-release.devsense.phptools-vscode
-  nixpkgs.vscode-marketplace-release.devsense.profiler-php-vscode
-  nixpkgs.vscode-marketplace-release.rexshi.phpdoc-comment-vscode-plugin
-  nixpkgs.vscode-marketplace-release.thenouillet.symfony-vscode
-  nixpkgs.vscode-marketplace-release.mehedidracula.php-namespace-resolver
+  nixpkgs.open-vsx-release.devsense.composer-php-vscode
+  nixpkgs.open-vsx-release.devsense.intelli-php-vscode
+  nixpkgs.open-vsx-release.devsense.phptools-vscode
+  nixpkgs.open-vsx-release.devsense.profiler-php-vscode
+  nixpkgs.open-vsx-release.rexshi.phpdoc-comment-vscode-plugin
+  nixpkgs.open-vsx-release.thenouillet.symfony-vscode
+  nixpkgs.open-vsx-release.mehedidracula.php-namespace-resolver
   # TWIG
-  nixpkgs.vscode-marketplace-release.whatwedo.twig
-  nixpkgs.vscode-marketplace-release.junstyle.twig-language
-  nixpkgs.vscode-marketplace-release.mblode.twig-language-2
-  nixpkgs.vscode-marketplace-release.serhatkaya.twig-formatter
+  nixpkgs.open-vsx-release.whatwedo.twig
+  nixpkgs.open-vsx-release.junstyle.twig-language
+  nixpkgs.open-vsx-release.mblode.twig-language-2
+  nixpkgs.open-vsx-release.serhatkaya.twig-formatter
   # SCSS/CSS
-  nixpkgs.vscode-marketplace-release.ecmel.vscode-html-css
-  nixpkgs.vscode-marketplace-release.mrmlnc.vscode-scss
+  nixpkgs.open-vsx-release.ecmel.vscode-html-css
+  nixpkgs.open-vsx-release.mrmlnc.vscode-scss
   
   # JS
-  nixpkgs.vscode-marketplace-release.svelte.svelte-vscode
-  nixpkgs.vscode-marketplace-release.angular.ng-template
-  nixpkgs.vscode-marketplace-release.vue.volar
+  nixpkgs.open-vsx-release.svelte.svelte-vscode
+  nixpkgs.open-vsx-release.angular.ng-template
+  nixpkgs.open-vsx-release.vue.volar
 
   # Python
-  nixpkgs.vscode-marketplace-release.ms-python.debugpy
-  nixpkgs.vscode-marketplace-release.ms-python.python
-  nixpkgs.vscode-marketplace-release.ms-python.vscode-pylance
+  nixpkgs.open-vsx-release.ms-python.debugpy
+  nixpkgs.open-vsx-release.ms-python.python
+  nixpkgs.open-vsx-release.ms-python.vscode-pylance
 
   # Rust
-  nixpkgs.vscode-marketplace-release.rust-lang.rust-analyzer
-  nixpkgs.vscode-marketplace-release.swellaby.vscode-rust-test-adapter
-  nixpkgs.vscode-marketplace-release.slint.slint
+  nixpkgs.open-vsx-release.rust-lang.rust-analyzer
+  nixpkgs.open-vsx-release.swellaby.vscode-rust-test-adapter
+  nixpkgs.open-vsx-release.slint.slint
 
   # Golang
-  nixpkgs.vscode-marketplace-release.golang.go
+  nixpkgs.open-vsx-release.golang.go
 
   # Java
-  nixpkgs.vscode-marketplace-release.vscjava.vscode-gradle
-  nixpkgs.vscode-marketplace-release.vscjava.vscode-java-debug
-  nixpkgs.vscode-marketplace-release.vscjava.vscode-java-dependency
-  nixpkgs.vscode-marketplace-release.vscjava.vscode-java-pack
-  nixpkgs.vscode-marketplace-release.vscjava.vscode-java-test
-  nixpkgs.vscode-marketplace-release.vscjava.vscode-maven
-  nixpkgs.vscode-marketplace-release.redhat.java
+  nixpkgs.open-vsx-release.vscjava.vscode-gradle
+  nixpkgs.open-vsx-release.vscjava.vscode-java-debug
+  nixpkgs.open-vsx-release.vscjava.vscode-java-dependency
+  nixpkgs.open-vsx-release.vscjava.vscode-java-pack
+  nixpkgs.open-vsx-release.vscjava.vscode-java-test
+  nixpkgs.open-vsx-release.vscjava.vscode-maven
+  nixpkgs.open-vsx-release.redhat.java
   
   # Scala
-  nixpkgs.vscode-marketplace-release.scala-lang.scala
-  nixpkgs.vscode-marketplace-release.scalameta.metals
+  nixpkgs.open-vsx-release.scala-lang.scala
+  nixpkgs.open-vsx-release.scalameta.metals
 
   # text tools
-  nixpkgs.vscode-marketplace-release.bibhasdn.unique-lines
-  nixpkgs.vscode-marketplace-release.aykutsarac.jsoncrack-vscode
-  nixpkgs.vscode-marketplace-release.mechatroner.rainbow-csv
-  nixpkgs.vscode-marketplace-release.redhat.vscode-xml
-  nixpkgs.vscode-marketplace-release.ryu1kn.partial-diff
+  nixpkgs.open-vsx-release.bibhasdn.unique-lines
+  nixpkgs.open-vsx-release.aykutsarac.jsoncrack-vscode
+  nixpkgs.open-vsx-release.mechatroner.rainbow-csv
+  nixpkgs.open-vsx-release.redhat.vscode-xml
+  nixpkgs.open-vsx-release.ryu1kn.partial-diff
 
   # Git
-  nixpkgs.vscode-marketplace-release.solomonkinard.git-blame
-  nixpkgs.vscode-marketplace-release.waderyan.gitblame
+  nixpkgs.open-vsx-release.solomonkinard.git-blame
+  nixpkgs.open-vsx-release.waderyan.gitblame
 
   # DevOps
-  nixpkgs.vscode-marketplace-release.ms-vscode-remote.remote-containers
-  nixpkgs.vscode-marketplace-release.ms-azuretools.vscode-docker
-  nixpkgs.vscode-marketplace-release.github.vscode-github-actions
+  nixpkgs.open-vsx-release.ms-vscode-remote.remote-containers
+  nixpkgs.open-vsx-release.ms-azuretools.vscode-docker
+  nixpkgs.open-vsx-release.github.vscode-github-actions
 
   # Testing
-  nixpkgs.vscode-marketplace-release.hbenl.vscode-test-explorer
-  nixpkgs.vscode-marketplace-release.ms-vscode.test-adapter-converter
+  nixpkgs.open-vsx-release.hbenl.vscode-test-explorer
+  nixpkgs.open-vsx-release.ms-vscode.test-adapter-converter
 
   # other tools
-  nixpkgs.vscode-marketplace-release.jock.svg
-  nixpkgs.vscode-marketplace-release.tomoki1207.pdf
-  nixpkgs.vscode-marketplace-release.thomas-baumgaertner.vcl
-  nixpkgs.vscode-marketplace-release.bbenoist.nix
-  nixpkgs.vscode-marketplace-release.visualstudioexptteam.intellicode-api-usage-examples
-  nixpkgs.vscode-marketplace-release.visualstudioexptteam.vscodeintellicode
+  nixpkgs.open-vsx-release.jock.svg
+  nixpkgs.open-vsx-release.tomoki1207.pdf
+  nixpkgs.open-vsx-release.thomas-baumgaertner.vcl
+  nixpkgs.open-vsx-release.bbenoist.nix
+  nixpkgs.open-vsx-release.visualstudioexptteam.intellicode-api-usage-examples
+  nixpkgs.open-vsx-release.visualstudioexptteam.vscodeintellicode
 ]

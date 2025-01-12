@@ -9,12 +9,29 @@ in
   pkgs.jankyborders
   pkgs.cocoapods
   pkgs.mas
+  pkgs.itsycal
   
   pkgs.yabai
   pkgs.skhd
 
   nixcasks.jordanbaird-ice
   nixcasks.shortcat
+  nixcasks.scroll-reverser
+  
+  nixcasks.android-studio
+  # nixcasks.azure-data-studio # causes build failure
+  nixcasks.firefox
+  nixcasks.insomnia
+  nixcasks.krita
+  nixcasks.mattermost
+  nixcasks.microsoft-azure-storage-explorer
+  nixcasks.obsidian
+  nixcasks.readdle-spark
+  nixcasks.thunderbird
+  nixcasks.tidal
+  nixcasks.vlc
+  nixcasks.yubico-authenticator
+
   
   # somehow presents a warning that SfSymbols6 is marked as broken
   # nixcasks.sf-symbols

@@ -2,7 +2,6 @@
 
 with pkgs; [
   arping
-  audacity
   bash
   bat
   coreutils-full
@@ -25,7 +24,6 @@ with pkgs; [
   imagemagick
   inetutils
   libksba
-  ninja
   nmap
   ouch
   procps
@@ -37,6 +35,8 @@ with pkgs; [
   rsync
   spaceship-prompt
   stow
+  termscp
+  tidal-dl
   tlrc
   trippy
   wget

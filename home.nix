@@ -5,10 +5,11 @@ let
 
   userConfig = import ./config.nix;
 
-  apps_tools = import ./apps/tools.nix pkgs;
-  apps_development = import ./apps/development.nix pkgs;
+  cli_apps = import ./apps/cli.nix pkgs;
+  dev_tools = import ./apps/development.nix pkgs;
+  gui_apps = import ./apps/with_gui.nix pkgs;
 
-  apps_platform = if pkgs.system == "aarch64-darwin" || pkgs.system == "x86_64-darwin" then
+  platform_apps = if pkgs.system == "aarch64-darwin" || pkgs.system == "x86_64-darwin" then
     import ./apps/macos.nix pkgs
   else
     import ./apps/linux.nix pkgs
@@ -19,11 +20,15 @@ let
   ];
 in
 {
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
+
   home = {
     username = userConfig.username;
     homeDirectory = userConfig.homeDirectory;
     stateVersion = "24.11";
-    packages = fonts ++ apps_tools ++ apps_platform ++ apps_development;
+    packages = fonts ++ cli_apps ++ dev_tools ++ gui_apps ++ platform_apps;
     file = {
       # ".oh-my-zsh".source = config.lib.file.mkOutOfStoreSymlink ./config_files/oh-my-zsh;
       ".zshrc".source = config.lib.file.mkOutOfStoreSymlink ./config_files/zshrc;
@@ -59,10 +64,10 @@ in
   programs.neovim.enable = true;
   programs.alacritty.enable = true;
 
-  programs.git = import ./programs/git.nix userConfig.gitFullName userConfig.gitMail;
-  programs.btop = import ./programs/btop.nix;
-  programs.helix = import ./programs/helix.nix;
-  programs.zed-editor = import ./programs/zed-editor.nix;
+  programs.git = import ./apps/home-manager-programs/git.nix userConfig.gitFullName userConfig.gitMail;
+  programs.btop = import ./apps/home-manager-programs/btop.nix;
+  programs.helix = import ./apps/home-manager-programs/helix.nix;
+  programs.zed-editor = import ./apps/home-manager-programs/zed-editor.nix;
   # programs.vscode = import ./programs/vscode.nix pkgs;
 
   imports = [
