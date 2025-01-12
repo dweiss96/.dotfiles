@@ -43,6 +43,7 @@ in
       ".config/skhd".source = config.lib.file.mkOutOfStoreSymlink ./config_files/without_module/skhd;
       ".config/yabai".source = config.lib.file.mkOutOfStoreSymlink ./config_files/without_module/yabai;
       ".config/zed/themes/catppuccin-pink.json".source = config.lib.file.mkOutOfStoreSymlink ./config_files/zed-theme.catppuccin-pink.json;
+      ".config/alacritty/catpuccin_mocha_theme.toml".source = config.lib.file.mkOutOfStoreSymlink ./config_files/alacritty.catpuccin_mocha_theme.toml;
 
       ".sdks/jdk/jdk11".source = pkgs.jdk11;
       ".sdks/jdk/jdk17".source = pkgs.jdk17;
