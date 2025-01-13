@@ -27,6 +27,7 @@ pkgs:
     };
     "editor.stickyScroll.enabled" = false;
     "workbench.iconTheme" = "catppuccin-mocha";
+    "php.validate.executablePath" = "~/.nix-profile/bin/php";
   };
   # extensions = with vscode-marketplace-release; [
   extensions = with pkgs.vscode-extensions; [
