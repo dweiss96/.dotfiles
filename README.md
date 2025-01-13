@@ -1,43 +1,11 @@
-# .dotfiles
-
-needs to live under `.config/home-manager`
-## managed with nix
-``
-
-`sh <(curl -L https://nixos.org/nix/install) --daemon`
-`nix-env -irf ~/.dotfiles/apps`
-
-## used tools
-* zsh
-* sed
-* stow
-* git
-* tig
-* docker
-* kubectl
-* vim
-* helix
-* erdtree
-* exa
-* btop
-* bat
-* yazi
-* ripgrep
-* conda
-
-### MacOS specific
-* yabai
-* sketchybar
-
-### Linux specific
-* xmonad
-
-Installers are available for:
-- MacOS
-- Arch Linux
+# .dotfiles via home-manager (nix)
 
 ## Usage
-Install via `install.sh` (run from git root)
 
-## Required commands after initial installation
-`defaults write com.mowglii.ItsycalApp AllowOutsideApplicationsFolder -bool YES`
+Clone to `~/.config/home-manager`
+
+Bootstrap nix and write config file via `bash ~/.config/home-manager/lib/bootstrap.sh`.
+It will ask for a git name and mail for the git configuration.
+
+## (MacOS only) required command after initial installation
+- `defaults write com.mowglii.ItsycalApp AllowOutsideApplicationsFolder -bool YES`
