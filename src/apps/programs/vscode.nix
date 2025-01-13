@@ -1,14 +1,7 @@
-pkgs: let
-  extension_repos = (import (builtins.fetchGit {
-    url = "https://github.com/nix-community/nix-vscode-extensions";
-    ref = "refs/heads/master";
-    rev = "c43d9089df96cf8aca157762ed0e2ddca9fcd71e";
-  })).extensions.${builtins.currentSystem};
-
-  extension_packages = extension_repos.vscode-marketplace-release;
-in {
+pkgs:
+{
   enable = true;
-  package = pkgs.vscodium;
+  package = pkgs.vscode;
   userSettings = {
     "editor.fontFamily" = "Fira Code, Menlo, Monaco, 'Courier New', monospace";
     "workbench.colorTheme" = "Catppuccin Mocha";
@@ -37,70 +30,174 @@ in {
   };
   # extensions = with vscode-marketplace-release; [
   extensions = with pkgs.vscode-extensions; [
+    # theme
+    catppuccin.catppuccin-vsc
+    catppuccin.catppuccin-vsc-icons
+    github.github-vscode-theme
+
+    # PHP
+    devsense.composer-php-vscode
+    devsense.profiler-php-vscode
+
+    # SCSS/CSS
+    ecmel.vscode-html-css
+
+    # JS
+    svelte.svelte-vscode
+    angular.ng-template
+    vue.volar
+
+    # Python
+    ms-python.debugpy
+    ms-python.python
+    ms-python.vscode-pylance
+
+    # Rust
+    rust-lang.rust-analyzer
+
+    # Golang
+    golang.go
+
+    # Java
+    vscjava.vscode-gradle
+    vscjava.vscode-java-debug
+    vscjava.vscode-java-dependency
+    vscjava.vscode-java-pack
+    vscjava.vscode-java-test
+    vscjava.vscode-maven
+    redhat.java
+
+
+    # Scala
+    scala-lang.scala
+    scalameta.metals
+
+    # text tools
+    mechatroner.rainbow-csv
+    redhat.vscode-xml
+    ryu1kn.partial-diff
+
+    # Git
+    waderyan.gitblame
+
+    # DevOps
+    ms-vscode-remote.remote-containers
+    ms-azuretools.vscode-docker
+    github.vscode-github-actions
+
+    # Testing
+    hbenl.vscode-test-explorer
+    ms-vscode.test-adapter-converter
+
+    # other tools
+    jock.svg
+    tomoki1207.pdf
+    bbenoist.nix
+    visualstudioexptteam.intellicode-api-usage-examples
+    visualstudioexptteam.vscodeintellicode
+
+    bmewburn.vscode-intelephense-client
    ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-         "ms-python"."python" = vscode-utils.extensionFromVscodeMarketplace {
-           name = "python";
-           publisher = "ms-python";
-           version = "2024.23.2025010801";
-           sha256 = "1s535r6bsnrlg216cp59gdhzs1di2yw7nj2za91ckk3nva92v6h6";
-           arch = "darwin-arm64";
-         };
-         "ms-python"."debugpy" = vscode-utils.extensionFromVscodeMarketplace {
-           name = "debugpy";
-           publisher = "ms-python";
-           version = "2024.15.2024121701";
-           sha256 = "12qlsfhhxn34gy3ypfh5mdpccz8xhv9jy94zxw4zp11rvddby9bf";
-           arch = "darwin-arm64";
-         };
-         "ms-python"."debugpy" = vscode-utils.extensionFromVscodeMarketplace {
-           name = "debugpy";
-           publisher = "ms-python";
-           version = "2024.15.2024121701";
-           sha256 = "11mgcsx136scanrp64aym2lqyfwj4d3cmr74ichcm62s6lk6c4q6";
-           arch = "darwin-arm64";
-         };
-         "redhat"."java" = vscode-utils.extensionFromVscodeMarketplace {
-           name = "java";
-           publisher = "redhat";
-           version = "1.39.2025010808";
-           sha256 = "05waqha5z110c4fb5sbgr2wv0w7a4qg7ahay97la16l1li1x6322";
-           arch = "darwin-arm64";
-         };
-         "redhat"."java" = vscode-utils.extensionFromVscodeMarketplace {
-           name = "java";
-           publisher = "redhat";
-           version = "1.39.2025010808";
-           sha256 = "19hz862jkyainm4qk3zcf5h46swq5cgq8f2diw47nxhqj5bilsz5";
-           arch = "darwin-arm64";
-         };
-         "redhat"."vscode-xml" = vscode-utils.extensionFromVscodeMarketplace {
-           name = "vscode-xml";
-           publisher = "redhat";
-           version = "0.27.2024121308";
-           sha256 = "1hrhzjqysrl9fw5xn6dgfiz8ksmy45grq0h92d7ml6z1hhcfdilb";
-           arch = "darwin-arm64";
-         };
-         "redhat"."vscode-xml" = vscode-utils.extensionFromVscodeMarketplace {
-           name = "vscode-xml";
-           publisher = "redhat";
-           version = "0.27.2024121308";
-           sha256 = "0wwfi44b7fmag4yy2g8g3m712any8yrw261rq0fg6niipx8p21is";
-           arch = "darwin-arm64";
-         };
-         "devsense"."phptools-vscode" = vscode-utils.extensionFromVscodeMarketplace {
-           name = "phptools-vscode";
-           publisher = "devsense";
-           version = "1.54.16642";
-           sha256 = "0699vgrjk2qa1c39x1vx2g6vnjpgibnzh2pxligrf18h3ph818qr";
-           arch = "darwin-arm64";
-         };
-         "rust-lang"."rust-analyzer" = vscode-utils.extensionFromVscodeMarketplace {
-           name = "rust-analyzer";
-           publisher = "rust-lang";
-           version = "0.4.2256";
-           sha256 = "147arpcgyypjn7972h7368bbni19mdz9f02dmyqaxk25viwc6clg";
-           arch = "darwin-arm64";
-         };
-       })
+    # PHP
+    # devsense.phptools-vscode
+    # devsense.intelli-php-vscode
+    {
+      name = "phpdoc-comment-vscode-plugin";
+      publisher = "rexshi";
+      version = "1.3.0";
+      sha256 = "1yv4lwzi116jf2rcb5cbbjb5xqv29vbwn4wc568nd9cdi1782hd2";
+    }
+    {
+      name = "symfony-vscode";
+      publisher = "thenouillet";
+      version = "1.0.2";
+      sha256 = "0qb99mkisykkzb0lbf4r94l677m408bkmxirmz4xjcha1gkchifw";
+    }
+    {
+      name = "php-namespace-resolver";
+      publisher = "mehedidracula";
+      version = "1.1.9";
+      sha256 = "1fqxsxs8sg6kpxh2yksvgwwzqfi436x2y8h2gqxiqmxfln8k21b2";
+    }
+
+    # TWIG
+    {
+      name = "twig";
+      publisher = "whatwedo";
+      version = "1.0.2";
+      sha256 = "0d552g0g9c5pmak4b9kjqr6z4rah276xs45lijv1hrs04jfwl8pr";
+    }
+    {
+      name = "twig-language";
+      publisher = "junstyle";
+      version = "0.10.15";
+      sha256 = "0bvlf1l5g8wwh0irnc91m9637xyp3cbfhq9nzlj353vjz8rwn0dv";
+    }
+    {
+      name = "twig-language-2";
+      publisher = "mblode";
+      version = "0.9.4";
+      sha256 = "09djdw6lipjbfgh8nmgm8nr3pr27cif04yv6imz33ch0af0k5dr5";
+    }
+    {
+      name = "twig-formatter";
+      publisher = "serhatkaya";
+      version = "1.0.0";
+      sha256 = "0ylq3fal8faqz64jb4fmr95fgd9bkisq632f28akq573cc24yx5w";
+    }
+
+
+    # SCSS/CSS
+    {
+      name = "vscode-scss";
+      publisher = "mrmlnc";
+      version = "0.10.0";
+      sha256 = "08kdvg4p0aysf7wg1qfbri59cipllgf69ph1x7aksrwlwjmsps12";
+    }
+
+    # Rust
+    {
+      name = "vscode-rust-test-adapter";
+      publisher = "swellaby";
+      version = "0.11.0";
+      sha256 = "111vhl71zzh4il1kh21l49alwlllzcvmdbsxyvk9bq3r24hxq1r2";
+    }
+    {
+      name = "slint";
+      publisher = "slint";
+      version = "1.9.2";
+      sha256 = "0qyz0ma8liblvfpqv2ylahp93a9f4pqv4habqgbbg52baw7ssv6j";
+    }
+
+    # text tools
+    {
+      name = "unique-lines";
+      publisher = "bibhasdn";
+      version = "1.0.0";
+      sha256 = "1x0lkdvc0247bms200nn2z5m7qaq9lg96ppbgk6lg3mgmxknjijv";
+    }
+    {
+      name = "jsoncrack-vscode";
+      publisher = "aykutsarac";
+      version = "2.0.3";
+      sha256 = "0pa49xg63la6gz5q652h25i2mf7wlj90rch9mpprwnbj9rw4qrb2";
+    }
+
+
+    # Git
+    {
+      name = "git-blame";
+      publisher = "solomonkinard";
+      version = "0.2.58";
+      sha256 = "1168nzgjli8gci4smp3fjiaqddddcgsv9zz9d16hz7v3aj2yk7ck";
+    }
+
+    # other tools
+    {
+      name = "vcl";
+      publisher = "thomas-baumgaertner";
+      version = "0.1.2";
+      sha256 = "074yjl93l8n8033f513l9mqrz646j0bmgx019l2192n7d241ggnb";
+    }
   ];
 }

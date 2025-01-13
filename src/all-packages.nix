@@ -26,6 +26,7 @@ in
     git = import ./apps/programs/git.nix userConfig.gitFullName userConfig.gitMail;
     btop = import ./apps/programs/btop.nix;
     helix = import ./apps/programs/helix.nix;
+    vscode = import ./apps/programs/vscode.nix pkgs;
     zed-editor = import ./apps/programs/zed-editor.nix;
   };
   imports = [
