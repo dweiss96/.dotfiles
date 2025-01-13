@@ -17,9 +17,10 @@ in
   nixcasks.shortcat
   nixcasks.itsycal
   nixcasks.unnaturalscrollwheels
-  
+
   nixcasks.android-studio
   # nixcasks.azure-data-studio # causes build failure
+  nixcasks.docker
   nixcasks.firefox
   nixcasks.insomnia
   nixcasks.krita

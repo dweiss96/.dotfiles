@@ -9,6 +9,7 @@ with pkgs; [
 
   android-studio
   azuredatastudio
+  docker
   firefox
   insomnia
   krita
