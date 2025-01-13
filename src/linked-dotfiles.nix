@@ -1,6 +1,7 @@
 config: {
   ".zshrc".source = config.lib.file.mkOutOfStoreSymlink ../config_files/zshrc;
   ".tigrc".source = config.lib.file.mkOutOfStoreSymlink ../config_files/tigrc;
+  ".wezterm.lua".source = config.lib.file.mkOutOfStoreSymlink ../config_files/wezterm.lua;
   ".p10k.zsh".source = config.lib.file.mkOutOfStoreSymlink ../config_files/p10k.zsh;
 
   ".config/borders".source = config.lib.file.mkOutOfStoreSymlink ../config_files/without_module/borders;

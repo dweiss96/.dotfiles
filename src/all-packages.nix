@@ -22,7 +22,6 @@ in
     zsh.oh-my-zsh.enable = true;
     vim.enable = true;
     neovim.enable = true;
-    alacritty = import ./apps/programs/alacritty.nix;
     git = import ./apps/programs/git.nix userConfig.gitFullName userConfig.gitMail;
     btop = import ./apps/programs/btop.nix;
     helix = import ./apps/programs/helix.nix;

@@ -31,6 +31,7 @@ in
   nixcasks.thunderbird
   nixcasks.tidal
   nixcasks.vlc
+  nixcasks.wezterm
   nixcasks.yubico-authenticator
 
   
