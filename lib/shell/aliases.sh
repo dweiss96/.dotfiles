@@ -91,8 +91,10 @@ alias kc="kubectl"
 alias d="docker"
 alias dco="docker compose"
 alias drit="docker_run_interactive_shell"
-alias docker_purge="docker rm $(docker ps -aq -f exited=0 -f exited=137)"
 alias ghub_ci="act --container-architecture linux/amd64"
+function docker_purge {
+	docker rm $(docker ps -aq -f exited=0 -f exited=137)
+}
 function docker_run_interactive_shell {
 	docker run --interactive --tty "$1" /bin/sh
 }
