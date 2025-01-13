@@ -28,6 +28,7 @@ with pkgs; {
 
     # toolchain Python 
     python314
+    poetry
     pyenv
     
     # toolchain Rust
@@ -61,7 +62,7 @@ with pkgs; {
     yq
   ];
 
-  additional_sdks = {
+  additionalSdks = {
     ".sdks/jdk/jdk11".source = pkgs.jdk11;
     ".sdks/jdk/jdk17".source = pkgs.jdk17;
     ".sdks/jdk/jdk21".source = pkgs.jdk21;

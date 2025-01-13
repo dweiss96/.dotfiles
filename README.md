@@ -38,3 +38,6 @@ Installers are available for:
 
 ## Usage
 Install via `install.sh` (run from git root)
+
+## Required commands after initial installation
+`defaults write com.mowglii.ItsycalApp AllowOutsideApplicationsFolder -bool YES`

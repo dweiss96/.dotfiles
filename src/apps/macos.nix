@@ -9,14 +9,14 @@ in
   pkgs.jankyborders
   pkgs.cocoapods
   pkgs.mas
-  pkgs.itsycal
   
   pkgs.yabai
   pkgs.skhd
 
   nixcasks.jordanbaird-ice
   nixcasks.shortcat
-  nixcasks.scroll-reverser
+  nixcasks.itsycal
+  nixcasks.unnaturalscrollwheels
   
   nixcasks.android-studio
   # nixcasks.azure-data-studio # causes build failure
