@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 let
   mac-app-util-src = builtins.fetchTarball "https://github.com/hraban/mac-app-util/archive/master.tar.gz";
   mac-app-util = import mac-app-util-src {};
@@ -28,28 +28,31 @@ in
     username = userConfig.username;
     homeDirectory = userConfig.homeDirectory;
     stateVersion = "24.11";
-    packages = fonts ++ cli_apps ++ dev_tools ++ gui_apps ++ platform_apps;
-    file = {
-      # ".oh-my-zsh".source = config.lib.file.mkOutOfStoreSymlink ./config_files/oh-my-zsh;
-      ".zshrc".source = config.lib.file.mkOutOfStoreSymlink ./config_files/zshrc;
-      ".tigrc".source = config.lib.file.mkOutOfStoreSymlink ./config_files/tigrc;
-      ".p10k.zsh".source = config.lib.file.mkOutOfStoreSymlink ./config_files/p10k.zsh;
+    packages = fonts ++ cli_apps ++ dev_tools.global ++ gui_apps ++ platform_apps;
+    file = lib.mkMerge [
+      {
+        # ".oh-my-zsh".source = config.lib.file.mkOutOfStoreSymlink ./config_files/oh-my-zsh;
+        ".zshrc".source = config.lib.file.mkOutOfStoreSymlink ./config_files/zshrc;
+        ".tigrc".source = config.lib.file.mkOutOfStoreSymlink ./config_files/tigrc;
+        ".p10k.zsh".source = config.lib.file.mkOutOfStoreSymlink ./config_files/p10k.zsh;
 
-      ".config/borders".source = config.lib.file.mkOutOfStoreSymlink ./config_files/without_module/borders;
-      ".config/erdtree".source = config.lib.file.mkOutOfStoreSymlink ./config_files/without_module/erdtree;
-      ".config/htop".source = config.lib.file.mkOutOfStoreSymlink ./config_files/without_module/htop;
-      ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink ./config_files/without_module/nvim;
-      ".config/sketchybar".source = config.lib.file.mkOutOfStoreSymlink ./config_files/without_module/sketchybar;
-      ".config/skhd".source = config.lib.file.mkOutOfStoreSymlink ./config_files/without_module/skhd;
-      ".config/yabai".source = config.lib.file.mkOutOfStoreSymlink ./config_files/without_module/yabai;
-      ".config/zed/themes/catppuccin-pink.json".source = config.lib.file.mkOutOfStoreSymlink ./config_files/zed-theme.catppuccin-pink.json;
-      ".config/alacritty/catpuccin_mocha_theme.toml".source = config.lib.file.mkOutOfStoreSymlink ./config_files/alacritty.catpuccin_mocha_theme.toml;
+        ".config/borders".source = config.lib.file.mkOutOfStoreSymlink ./config_files/without_module/borders;
+        ".config/erdtree".source = config.lib.file.mkOutOfStoreSymlink ./config_files/without_module/erdtree;
+        ".config/htop".source = config.lib.file.mkOutOfStoreSymlink ./config_files/without_module/htop;
+        ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink ./config_files/without_module/nvim;
+        ".config/sketchybar".source = config.lib.file.mkOutOfStoreSymlink ./config_files/without_module/sketchybar;
+        ".config/skhd".source = config.lib.file.mkOutOfStoreSymlink ./config_files/without_module/skhd;
+        ".config/yabai".source = config.lib.file.mkOutOfStoreSymlink ./config_files/without_module/yabai;
+        ".config/zed/themes/catppuccin-pink.json".source = config.lib.file.mkOutOfStoreSymlink ./config_files/zed-theme.catppuccin-pink.json;
+        ".config/alacritty/catpuccin_mocha_theme.toml".source = config.lib.file.mkOutOfStoreSymlink ./config_files/alacritty.catpuccin_mocha_theme.toml;
 
-      ".sdks/jdk/jdk11".source = pkgs.jdk11;
-      ".sdks/jdk/jdk17".source = pkgs.jdk17;
-      ".sdks/jdk/jdk21".source = pkgs.jdk21;
-      ".sdks/jdk/scala".source = pkgs.scala;
-    };
+        # ".sdks/jdk/jdk11".source = pkgs.jdk11;
+        # ".sdks/jdk/jdk17".source = pkgs.jdk17;
+        # ".sdks/jdk/jdk21".source = pkgs.jdk21;
+        # ".sdks/jdk/scala".source = pkgs.scala;
+      }
+      dev_tools.additional_sdks
+    ];
     sessionVariables = {
       EDITOR = "vim";
     };
