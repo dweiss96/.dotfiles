@@ -27,9 +27,11 @@ pkgs:
     };
     "editor.stickyScroll.enabled" = false;
     "workbench.iconTheme" = "catppuccin-mocha";
-    "php.validate.executablePath" = "~/.nix-profile/bin/php";
+    "php.validate.executablePath" = "${pkgs.php}/bin/php";
+    "phpserver.phpPath" = "${pkgs.php}/bin/php";
+    "symfony-vscode.phpExecutablePath" = "${pkgs.php}/bin/php";
+    "intelephense.telemetry.enabled" = false;
   };
-  # extensions = with vscode-marketplace-release; [
   extensions = with pkgs.vscode-extensions; [
     # theme
     catppuccin.catppuccin-vsc
@@ -100,8 +102,6 @@ pkgs:
     bmewburn.vscode-intelephense-client
    ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
     # PHP
-    # devsense.phptools-vscode
-    # devsense.intelli-php-vscode
     {
       name = "phpdoc-comment-vscode-plugin";
       publisher = "rexshi";
