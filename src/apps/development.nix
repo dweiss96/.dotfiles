@@ -26,11 +26,11 @@ with pkgs; {
     scala
     kotlin
 
-    # toolchain Python 
+    # toolchain Python
     python314
     poetry
     pyenv
-    
+
     # toolchain Rust
     rustlang
 
@@ -44,6 +44,7 @@ with pkgs; {
     ruby
     sqlite
     zig
+    libiconv
 
     # tools
     act

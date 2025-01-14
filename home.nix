@@ -2,7 +2,7 @@
 let
   userConfig = import ./config.nix;
   appConfiguration = import ./src/all-packages.nix config pkgs lib userConfig;
-  linkedDotfiles = import ./src/linked-dotfiles.nix config;
+  linkedDotfiles = import ./src/linked-dotfiles.nix config pkgs;
 in
 {
   nixpkgs.config = {
