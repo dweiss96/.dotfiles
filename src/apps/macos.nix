@@ -9,9 +9,10 @@ in
   pkgs.jankyborders
   pkgs.cocoapods
   pkgs.mas
-  
+
   pkgs.yabai
   pkgs.skhd
+  pkgs.docker
 
   nixcasks.jordanbaird-ice
   nixcasks.shortcat
@@ -34,7 +35,7 @@ in
   nixcasks.wezterm
   nixcasks.yubico-authenticator
 
-  
+
   # somehow presents a warning that SfSymbols6 is marked as broken
   # nixcasks.sf-symbols
 ]
