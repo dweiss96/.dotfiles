@@ -169,6 +169,12 @@ pkgs:
       version = "1.9.2";
       sha256 = "0qyz0ma8liblvfpqv2ylahp93a9f4pqv4habqgbbg52baw7ssv6j";
     }
+    {
+      name = "tera";
+      publisher = "karunamurti";
+      version = "0.0.9";
+      sha256 = "1pykbdfvbhdj1kj7l3s8ri88v24m96x4c848qacz1zizg1jsbgbv";
+    }
 
     # text tools
     {
