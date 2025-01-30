@@ -17,8 +17,14 @@ echo "
 # install nix
 sh <(curl -L https://nixos.org/nix/install) --daemon
 
+# add unstable nixpkgs as channel
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+
 # install home-manager
 /bin/bash -c "$(nix-shell '<home-manager>' -A install)"
+
+# update nix channels
+nix-channel --update
 
 # build home directory with home-manager
 /bin/bash -c "$(home-manager switch)"
