@@ -1,7 +1,7 @@
 pkgs:
 {
   enable = true;
-  package = pkgs.vscode;
+  package = pkgs.vscodium;
   userSettings = {
     "editor.fontFamily" = "Fira Code, Menlo, Monaco, 'Courier New', monospace";
     "workbench.colorTheme" = "Catppuccin Mocha";
