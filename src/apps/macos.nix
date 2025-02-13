@@ -23,12 +23,10 @@ in
   # nixcasks.azure-data-studio # causes build failure
   nixcasks.docker
   nixcasks.firefox
-  nixcasks.insomnia
   nixcasks.krita
   nixcasks.mattermost
   nixcasks.microsoft-azure-storage-explorer
   nixcasks.obsidian
-  nixcasks.readdle-spark
   nixcasks.thunderbird
   nixcasks.tidal
   nixcasks.vlc
