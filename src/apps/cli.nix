@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 with pkgs; [
-  alot
   arping
   bash
   bat
