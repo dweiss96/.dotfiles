@@ -7,6 +7,7 @@ with pkgs; [
   helm
   wezterm
 
+  alot
   android-studio
   azuredatastudio
   docker
