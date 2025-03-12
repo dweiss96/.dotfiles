@@ -21,6 +21,7 @@ with pkgs; {
 
     # toolchain java and derivates
     jdk21
+    groovy
     maven
     sbt
     scala
