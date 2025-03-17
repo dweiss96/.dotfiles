@@ -27,6 +27,9 @@ pkgs:
             "**/.metals" = true;
             "**/.ammonite" = true;
         };
+        "[rust]" = {
+          "editor.defaultFormatter" = "rust-lang.rust-analyzer";
+        };
         "editor.stickyScroll.enabled" = false;
         "workbench.iconTheme" = "catppuccin-mocha";
         "php.validate.executablePath" = "${pkgs.php}/bin/php";
