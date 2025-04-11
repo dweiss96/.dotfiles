@@ -5,34 +5,31 @@ lalt - j    : yabai -m window --focus south || yabai -m display --focus south
 lalt - k    : yabai -m window --focus north || yabai -m display --focus north
 lalt - l    : yabai -m window --focus east  || yabai -m display --focus east
 
-lalt - e : yabai -m space --layout bsp && sketchybar --trigger layout_change
-lalt - f : yabai -m space --layout float && sketchybar --trigger layout_change
-lalt - t : yabai -m space --layout stack && sketchybar --trigger layout_change
+lalt - e : yabai -m space --layout bsp
+lalt - f : yabai -m space --layout float
+lalt - t : yabai -m space --layout stack
 
 # Float / Unfloat window: lalt - space
-lalt - space : yabai -m window --toggle float; sketchybar --trigger window_focus
-
-# Reload Sketchybar
-ctrl + lalt - r : sketchybar --reload ~/.config/sketchybar/sketchybarrc
+lalt - space : yabai -m window --toggle float
 
 # Make window zoom to fullscreen: shift + lalt - f
-shift + lalt - f : yabai -m window --toggle zoom-fullscreen; sketchybar --trigger window_focus
+shift + lalt - f : yabai -m window --toggle zoom-fullscreen
 
-# Make window zoom to parent node: lalt - f 
-lalt - f : yabai -m window --toggle zoom-parent; sketchybar --trigger window_focus
+# Make window zoom to parent node: lalt - f
+lalt - f : yabai -m window --toggle zoom-parent
 
 ## Window Movement (shift + lalt - ...)
 # Moving windows in spaces: shift + lalt - {j, k, l, ö}
-shift + lalt - h : yabai -m window --warp west || $(yabai -m window --display west && sketchybar --trigger windows_on_spaces && yabai -m display --focus west && yabai -m window --warp last) || yabai -m window --move rel:-10:0
-shift + lalt - j : yabai -m window --warp south || $(yabai -m window --display south && sketchybar --trigger windows_on_spaces && yabai -m display --focus south) || yabai -m window --move rel:0:10
-shift + lalt - k : yabai -m window --warp north || $(yabai -m window --display north && sketchybar --trigger windows_on_spaces && yabai -m display --focus north) || yabai -m window --move rel:0:-10
-shift + lalt - l : yabai -m window --warp east || $(yabai -m window --display east && sketchybar --trigger windows_on_spaces && yabai -m display --focus east && yabai -m window --warp first) || yabai -m window --move rel:10:0
+shift + lalt - h : yabai -m window --warp west || $(yabai -m window --display west && yabai -m display --focus west && yabai -m window --warp last) || yabai -m window --move rel:-10:0
+shift + lalt - j : yabai -m window --warp south || $(yabai -m window --display south && yabai -m display --focus south) || yabai -m window --move rel:0:10
+shift + lalt - k : yabai -m window --warp north || $(yabai -m window --display north && yabai -m display --focus north) || yabai -m window --move rel:0:-10
+shift + lalt - l : yabai -m window --warp east || $(yabai -m window --display east && yabai -m display --focus east && yabai -m window --warp first) || yabai -m window --move rel:10:0
 
 # Toggle split orientation of the selected windows node: shift + lalt - s
 shift + lalt - s : yabai -m window --toggle splits
 
-shift + lalt - p : yabai -m window --space prev; yabai -m space --focus prev; sketchybar --trigger windows_on_spaces
-shift + lalt - n : yabai -m window --space next; yabai -m space --focus next; sketchybar --trigger windows_on_spaces
+shift + lalt - p : yabai -m window --space prev; yabai -m space --focus prev
+shift + lalt - n : yabai -m window --space next; yabai -m space --focus next
 
 # Mirror Space on X and Y Axis: shift + lalt - {x, y}
 shift + lalt - x : yabai -m space --mirror x-axis
