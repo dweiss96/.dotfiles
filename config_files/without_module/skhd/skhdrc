@@ -48,3 +48,6 @@ ctrl + lalt - l : yabai -m window --resize right:100:0 || yabai -m window --resi
 
 # Equalize size of windows: ctrl + lalt - e
 ctrl + lalt - e : yabai -m space --balance
+
+# start terminal fast
+# cmd + return : wezterm

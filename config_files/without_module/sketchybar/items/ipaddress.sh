@@ -9,5 +9,5 @@ sketchybar --add item ip_address right \
 	background.corner_radius=6 \
 	background.height=24 \
 	icon.color=$WHITE \
-	label.color=$WHITE
+	label.color=$WHITE \
 	--subscribe ip_address wifi_change

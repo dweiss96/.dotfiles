@@ -3,6 +3,7 @@ config: pkgs: {
   ".tigrc".source = config.lib.file.mkOutOfStoreSymlink ../config_files/tigrc;
   ".wezterm.lua".source = config.lib.file.mkOutOfStoreSymlink ../config_files/wezterm.lua;
   ".p10k.zsh".source = config.lib.file.mkOutOfStoreSymlink ../config_files/p10k.zsh;
+  ".aerospace.toml".source = config.lib.file.mkOutOfStoreSymlink ../config_files/aerospace.toml;
 
   ".cargo/config.toml" = import files/cargo-config-toml.nix pkgs;
 

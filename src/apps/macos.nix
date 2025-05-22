@@ -6,16 +6,20 @@ let
   };
 in
 [
-  pkgs.jankyborders
   pkgs.cocoapods
   pkgs.mas
 
   pkgs.yabai
   pkgs.skhd
+  pkgs.aerospace
+  pkgs.jankyborders
+  pkgs.sketchybar
   pkgs.docker
+  pkgs.utm
 
+  nixcasks.ubersicht
   nixcasks.jordanbaird-ice
-  nixcasks.shortcat
+  pkgs.shortcat
   nixcasks.itsycal
   nixcasks.unnaturalscrollwheels
 

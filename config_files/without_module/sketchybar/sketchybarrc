@@ -6,7 +6,9 @@ source "$HOME/.config/sketchybar/icons.sh"  # Loads all defined icons
 ITEM_DIR="$HOME/.config/sketchybar/items"     # Directory where the items are configured
 PLUGIN_DIR="$HOME/.config/sketchybar/plugins" # Directory where all the plugin scripts are stored
 
-FONT="SF Pro" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
+source "$PLUGIN_DIR/aerospace_sketchybar_monitor_map.sh" # read display information
+
+FONT="Fira Code" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
 PADDINGS=3    # All paddings use this value (icon, label, background)
 
 # Setting up and starting the helper process
@@ -15,15 +17,12 @@ killall helper
 cd $HOME/.config/sketchybar/helper && make
 $HOME/.config/sketchybar/helper/helper $HELPER >/dev/null 2>&1 &
 
-# Unload the macOS on screen indicator overlay for volume change
-launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist >/dev/null 2>&1 &
-
 # Setting up the general bar appearance of the bar
 bar=(
 	height=39
 	color=$BAR_COLOR
 	shadow=on
-	position=top
+	position=bottom
 	sticky=on
 	padding_right=10
 	padding_left=10
@@ -60,23 +59,15 @@ defaults=(
 )
 
 sketchybar --default "${defaults[@]}"
+source "$HOME/.config/sketchybar/events.sh"
 
 # Left
-source "$ITEM_DIR/apple.sh"
-source "$ITEM_DIR/spaces.sh"
-source "$ITEM_DIR/front_app.sh"
+source "$ITEM_DIR/aerospaces.sh"
+source "$ITEM_DIR/space_apps.sh"
 
-# Center
-source "$ITEM_DIR/spotify.sh"
 
 # Right
-source "$ITEM_DIR/calendar.sh"
-source "$ITEM_DIR/brew.sh"
-# source "$ITEM_DIR/github.sh"
-source "$ITEM_DIR/battery.sh"
-source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/ipaddress.sh"
-source "$ITEM_DIR/cpu.sh"
 
 # Forcing all item scripts to run (never do this outside of sketchybarrc)
 sketchybar --update

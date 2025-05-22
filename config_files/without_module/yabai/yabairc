@@ -14,7 +14,7 @@ yabai -m signal --add event=display_removed action="sleep 1 && $HOME/.config/yab
 $HOME/.config/yabai/create_spaces.sh
 
 # yabai -m config external_bar               all:39:0     \
-yabai -m config external_bar               all:0:0     \
+yabai -m config external_bar               all:0:39     \
                 window_border              on           \
                 mouse_follows_focus        off          \
                 focus_follows_mouse        off    \
@@ -58,3 +58,5 @@ echo "yabai configuration loaded.."
 echo "starting jankyborders.."
 borders &
 echo "jankyborders started.."
+sketchybar &
+echo "sketchybar started.."
