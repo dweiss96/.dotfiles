@@ -36,6 +36,7 @@ with pkgs; {
     rustlang
 
     # toolchains misc.
+    dotnet-sdk
     dart-sass
     flutter327
     gcc
