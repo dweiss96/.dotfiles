@@ -139,5 +139,13 @@ userName: userEmail: {
     "tmp"
     "temp"
     "gitignored"
+
+    # msal files android
+    "app/src/main/res/raw/msal_config_prod.json"
+    "app/src/main/res/raw/msal_config_stage.json"
+
+    # nix shell file for now
+    "shell.nix"
+
   ];
 }
