@@ -33,6 +33,7 @@ with pkgs; [
   ranger
   ripgrep
   rsync
+  rustscan
   spaceship-prompt
   stow
   termscp
