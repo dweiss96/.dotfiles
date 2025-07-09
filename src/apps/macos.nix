@@ -25,7 +25,7 @@ in
 
   nixcasks.android-studio
   # nixcasks.azure-data-studio # causes build failure
-  nixcasks.docker
+  pkgs.docker
   nixcasks.firefox
   nixcasks.krita
   nixcasks.mattermost
