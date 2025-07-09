@@ -12,7 +12,7 @@ in
   home = {
     username = userConfig.username;
     homeDirectory = userConfig.homeDirectory;
-    stateVersion = "24.11";
+    stateVersion = "25.11";
     packages = appConfiguration.packages;
     file = lib.mkMerge [
       linkedDotfiles
