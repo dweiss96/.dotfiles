@@ -2,10 +2,21 @@
 
 with pkgs; [
   yazi
-  xmonad
-  xmonad-contrib
+  hyprlock
+  hyprshot
+  hyprkeys
+  hyprpaper
+  waybar
+  walker
+  wlogout
+  networkmanagerapplet
   helm
   wezterm
+  kitty
+  kanshi
+  waybar-mpris
+  swww
+  wofi
 
   alot
   android-studio
@@ -21,4 +32,5 @@ with pkgs; [
   ungoogled-chromium
   vlc
   yubioath-flutter
+  blueman
 ]
