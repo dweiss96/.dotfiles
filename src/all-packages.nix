@@ -1,6 +1,10 @@
 config: pkgs: lib: userConfig:
 let
-  macAppUtil = import (builtins.fetchTarball "https://github.com/hraban/mac-app-util/archive/master.tar.gz") {};
+  macAppUtil = if pkgs.system == "aarch64-darwin" || pkgs.system == "x86_64-darwin" then
+    import (builtins.fetchTarball "https://github.com/hraban/mac-app-util/archive/master.tar.gz") {}
+  else 
+    {}
+  ;
 
   fonts = import ./apps/fonts.nix pkgs;
   cliApps = import ./apps/cli.nix pkgs;
@@ -12,13 +16,19 @@ let
   else
     import ./apps/linux.nix pkgs
   ;
+
+  requiresZshViaHomeManager = if pkgs.system == "aarch64-darwin" || pkgs.system == "x86_64-darwin" then
+    true
+  else
+    false
+  ;
 in
 
 {
   packages = fonts ++ cliApps ++ devTools.global ++ guiApps ++ platformApps;
   additionalSdks = devTools.additionalSdks;
   programs = {
-    zsh.enable = true;
+    zsh.enable = requiresZshViaHomeManager;
     zsh.oh-my-zsh.enable = true;
     vim.enable = true;
     neovim.enable = true;
@@ -28,7 +38,4 @@ in
     vscode = import ./apps/programs/vscode.nix pkgs;
     zed-editor = import ./apps/programs/zed-editor.nix;
   };
-  imports = [
-    macAppUtil.homeManagerModules.default
-  ];
 }
