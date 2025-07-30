@@ -5,7 +5,7 @@ pkgs:
   profiles = {
     default = {
       userSettings = {
-        "editor.fontFamily" = "Fira Code, Menlo, Monaco, 'Courier New', monospace";
+        "editor.fontFamily" = "Fira Code, Font Awesome 6 Free, Menlo, Monaco, 'Courier New', monospace";
         "workbench.colorTheme" = "Catppuccin Mocha";
         "workbench.startupEditor" = "none";
         "files.autoSave" = "onFocusChange";
@@ -44,8 +44,8 @@ pkgs:
         github.github-vscode-theme
 
         # PHP
-        devsense.composer-php-vscode
-        devsense.profiler-php-vscode
+        #devsense.composer-php-vscode
+        #devsense.profiler-php-vscode
 
         # SCSS/CSS
         ecmel.vscode-html-css
