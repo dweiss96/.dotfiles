@@ -20,14 +20,12 @@ in
     ];
     sessionVariables = {
       EDITOR = "vim";
+      NIXOS_OZONE_WL = "1";
     };
   };
 
   programs = lib.mkMerge [
     { home-manager.enable = true; } # Let Home Manager install and manage itself.
     appConfiguration.programs
-  ];
-
-  imports = appConfiguration.imports ++ [
   ];
 }
