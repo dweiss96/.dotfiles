@@ -7,12 +7,12 @@ read -p "> git mail (e.g. johndoe@example.net):" GITMAIL
 # Write home-manager configuration (could change per user and/or platform/device)
 echo "
 {
-  username = "$USER";
-  homeDirectory = "$HOME";
-  gitFullName = "$GITFULLNAME";
-  gitMail = "$GITMAIL";
+  username = \"$USER\";
+  homeDirectory = \"$HOME\";
+  gitFullName = \"$GITFULLNAME\";
+  gitMail = \"$GITMAIL\";
 }
-" > $HOME/.config/home-manager/configuration.nix
+" > $HOME/.config/home-manager/config.nix
 
 # install nix
 sh <(curl -L https://nixos.org/nix/install) --daemon
