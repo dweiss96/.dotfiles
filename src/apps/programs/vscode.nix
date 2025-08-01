@@ -36,6 +36,7 @@ pkgs:
         "phpserver.phpPath" = "${pkgs.php}/bin/php";
         "symfony-vscode.phpExecutablePath" = "${pkgs.php}/bin/php";
         "intelephense.telemetry.enabled" = false;
+        "omnisharp.dotnetPath" = "${pkgs.dotnet}/bin/dotnet";
       };
       extensions = with pkgs.vscode-extensions; [
         # theme
