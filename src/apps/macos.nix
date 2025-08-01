@@ -19,7 +19,6 @@ in
 
   nixcasks.ubersicht
   nixcasks.jordanbaird-ice
-  pkgs.shortcat
   nixcasks.itsycal
   nixcasks.unnaturalscrollwheels
 
